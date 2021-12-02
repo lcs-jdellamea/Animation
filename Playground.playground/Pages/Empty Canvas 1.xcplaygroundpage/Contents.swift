@@ -1,10 +1,10 @@
 //: [Previous](@previous) / [Next](@next)
 /*:
-## Canvas size
+ ## Canvas size
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
+let preferredWidth = 400
 let preferredHeight = 600
 /*:
  ## Required code
@@ -39,40 +39,42 @@ PlaygroundPage.current.liveView = canvas
  If you do not wish to see a grid, comment out the code on line 48.
  
  */
-
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
-
-// Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+//makes canvas
+canvas.translate(to: Point(x: canvas.width / 400,
+                           y: canvas.height / 600))
 
 /*:
  ## Add your code
  
  Beginning on line 61, you can add your own code.
-  
+ 
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
+//removes step by step screenshots
+canvas.highPerformance = true
 
-// Begin writing your code below (you can remove the examples shown)
+//creating new shape
+func arrow() {
+    
+}
+//background
+canvas.fillColor = .black
+canvas.drawRectangle(at: Point(x:0,y:0), width: 400, height:600)
+//white strip in background to create white line effect
+canvas.fillColor = .white
+canvas.drawRectangle(at: Point(x:0,y:450), width:400, height: 100)
+//black rectangle over white to make white lines
+canvas.fillColor = .black
+canvas.drawRectangle(at: Point(x:0,y:453), width: 400, height: 93)
+//background ends
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+//adds step by step screenshots
+canvas.highPerformance = false
 
-// Go back to origin
-p.goToOrigin()
-
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
-
+//Add and Show Grid
+canvas.drawAxes(withScale: true, by: 50, color: .white)
 /*:
  ## Show the Live View
  Don't see any results?
@@ -80,7 +82,7 @@ p.addArc(radius: 50, angle: -45)
  Remember to show the Live View (1 then 2):
  
  ![timeline](timeline.png "Timeline")
-
+ 
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  
