@@ -55,8 +55,14 @@ canvas.translate(to: Point(x: canvas.width / 400,
 canvas.highPerformance = true
 
 //creating new shape
-func arrow() {
-    
+canvas.fillColor = .purple
+func arrow(xPosition:Int, yPosition: Int) {
+    var arrowVertices: [Point] = []
+    arrowVertices.append(Point(x: xPosition + 0, y: yPosition + 30))
+    arrowVertices.append(Point(x: xPosition + 20, y: yPosition + 50))
+    arrowVertices.append(Point(x: xPosition + 50, y: yPosition + 20))
+    arrowVertices.append(Point(x: xPosition + 30, y: yPosition + 0))
+    canvas.drawCustomShape(with: arrowVertices)
 }
 //background
 canvas.fillColor = .black
