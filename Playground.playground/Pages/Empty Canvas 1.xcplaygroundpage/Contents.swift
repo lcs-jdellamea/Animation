@@ -6,6 +6,7 @@
  */
 let preferredWidth = 400
 let preferredHeight = 600
+
 /*:
  ## Required code
  
@@ -54,16 +55,6 @@ canvas.translate(to: Point(x: canvas.width / 400,
 //removes step by step screenshots
 canvas.highPerformance = true
 
-//creating new shape
-canvas.fillColor = .purple
-func arrow(xPosition:Int, yPosition: Int) {
-    var arrowVertices: [Point] = []
-    arrowVertices.append(Point(x: xPosition + 0, y: yPosition + 30))
-    arrowVertices.append(Point(x: xPosition + 20, y: yPosition + 50))
-    arrowVertices.append(Point(x: xPosition + 50, y: yPosition + 20))
-    arrowVertices.append(Point(x: xPosition + 30, y: yPosition + 0))
-    canvas.drawCustomShape(with: arrowVertices)
-}
 //background
 canvas.fillColor = .black
 canvas.drawRectangle(at: Point(x:0,y:0), width: 400, height:600)
@@ -75,12 +66,45 @@ canvas.fillColor = .black
 canvas.drawRectangle(at: Point(x:0,y:453), width: 400, height: 93)
 //background ends
 
+//creating, and Iterating arrows
+//creating loop, and defining xPOS and yPOS
+
+for xPosition in stride(from: 0, to: 400, by: 80) {
+    
+    for yPosition in stride(from: 0, to: 400, by: 80) {
+        
+//selection statement for color
+        if xPosition == yPosition {
+            canvas.fillColor = .white
+        } else {
+            canvas.fillColor = .purple
+        }
+        
+//making purple arrow
+        
+    var arrowVertices: [Point] = []
+    arrowVertices.append(Point(x: xPosition + 0, y: yPosition + 0))
+    arrowVertices.append(Point(x: xPosition + 65, y: yPosition + 0))
+    arrowVertices.append(Point(x: xPosition + 65, y: yPosition + 15))
+    arrowVertices.append(Point(x: xPosition + 25, y: yPosition + 15))
+    arrowVertices.append(Point(x: xPosition + 75, y: yPosition + 60))
+    arrowVertices.append(Point(x: xPosition + 65, y: yPosition + 75))
+    arrowVertices.append(Point(x: xPosition + 15, y: yPosition + 30))
+    arrowVertices.append(Point(x: xPosition + 15, y: yPosition + 70))
+    arrowVertices.append(Point(x: xPosition + 0, y: yPosition + 70))
+    arrowVertices.append(Point(x: xPosition + 0, y: yPosition + 0))
+        
+    canvas.drawCustomShape(with: arrowVertices)
+        
+    }
+}
+
 
 //adds step by step screenshots
 canvas.highPerformance = false
 
 //Add and Show Grid
-canvas.drawAxes(withScale: true, by: 50, color: .white)
+canvas.drawAxes(withScale: true, by: 20, color: .white)
 /*:
  ## Show the Live View
  Don't see any results?
