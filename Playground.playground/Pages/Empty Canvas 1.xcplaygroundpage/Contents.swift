@@ -74,6 +74,7 @@ for xPosition in stride(from: 0, to: 400, by: 80) {
     for yPosition in stride(from: 0, to: 400, by: 80) {
         
 //selection statement for color
+      
         if xPosition == yPosition {
             canvas.fillColor = .white
         } else {
@@ -87,7 +88,7 @@ for xPosition in stride(from: 0, to: 400, by: 80) {
     arrowVertices.append(Point(x: xPosition + 65, y: yPosition + 0))
     arrowVertices.append(Point(x: xPosition + 65, y: yPosition + 15))
     arrowVertices.append(Point(x: xPosition + 25, y: yPosition + 15))
-    arrowVertices.append(Point(x: xPosition + 75, y: yPosition + 60))
+    arrowVertices.append(Point(x: xPosition + 75, y: yPosition + 63))
     arrowVertices.append(Point(x: xPosition + 65, y: yPosition + 75))
     arrowVertices.append(Point(x: xPosition + 15, y: yPosition + 30))
     arrowVertices.append(Point(x: xPosition + 15, y: yPosition + 70))
@@ -99,24 +100,26 @@ for xPosition in stride(from: 0, to: 400, by: 80) {
     }
 }
 
+//adding text
+
+canvas.textColor = .white
+canvas.drawText(message: "the velvet underground", at: Point(x: 20,y: 400), size: 30, kerning: 1)
+
+canvas.drawText(message: "first appearance in london", at: Point(x: 5,y: 525), size: 8, kerning: 0.5)
+
+canvas.drawText(message: "the london college of printing", at: Point(x: 5,y: 510), size: 8, kerning: 0.5)
+
+canvas.drawText(message: "with spring and pollyfloskin", at: Point(x: 155,y: 525), size: 8, kerning: 0.5)
+
+canvas.drawText(message: "plus the great western light show", at: Point(x: 155,y: 510), size: 8, kerning: 0.5)
+
+canvas.drawText(message: "thursday", at: Point(x: 305,y: 525), size: 8, kerning: 1)
+
+canvas.drawText(message: "october 14 1971 / 8 pm", at: Point(x: 305,y: 510), size: 8, kerning: 0.5)
 
 //adds step by step screenshots
 canvas.highPerformance = false
 
 //Add and Show Grid
-canvas.drawAxes(withScale: true, by: 20, color: .white)
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
- 
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
+
+//    canvas.drawAxes(withScale: true, by: 20, color: .white)
