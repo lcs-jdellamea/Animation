@@ -81,20 +81,20 @@ for xPosition in stride(from: 0, through: 350, by: 50) {
         // Draw tilted rectangle
         // Custom shape with relative co-ordinates
         canvas.fillColor = .blue
-        var rectangleVertices: [Point] = []
-        rectangleVertices.append(Point(x: xPosition + 0,
-                                       y: yPosition + 30))  // A
-        rectangleVertices.append(Point(x: xPosition + 20,
-                                       y: yPosition + 50))  // B
-        rectangleVertices.append(Point(x: xPosition + 50,
-                                       y: yPosition + 20))  // C
-        rectangleVertices.append(Point(x: xPosition + 30,
-                                       y: yPosition + 0))   // D
-        canvas.drawCustomShape(with: rectangleVertices)
+              var rectangleVertices: [Point] = []
+              rectangleVertices.append(Point(x: xPosition + 0,
+                                             y: yPosition + 30))  // A
+              rectangleVertices.append(Point(x: xPosition + 20,
+                                             y: yPosition + 50))  // B
+              rectangleVertices.append(Point(x: xPosition + 50,
+                                             y: yPosition + 20))  // C
+              rectangleVertices.append(Point(x: xPosition + 30,
+                                             y: yPosition + 0))   // D
+              canvas.drawCustomShape(with: rectangleVertices)
 
-    }
-    
-}
+          }
+          
+      }
 
 // Draw one more tilted rectangle
 canvas.fillColor = .yellow
