@@ -53,7 +53,7 @@ canvas.translate(to: Point(x: canvas.width / 400,
  
  */
 //removes step by step screenshots
-canvas.highPerformance = true
+canvas.highPerformance = false
 
 //background
 canvas.fillColor = .black

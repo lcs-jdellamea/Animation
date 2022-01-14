@@ -49,6 +49,12 @@ for xPosition in stride(from: 0, through: 400, by: 400) {
     
     for yPosition in stride(from: 0, through: 600, by: 150) {
         
+        if xPosition == yPosition {
+            canvas.fillColor = .purple
+        } else {
+            canvas.fillColor = .black
+        }
+        
       var rectangleVertices: [Point] = []
       rectangleVertices.append(Point(x: xPosition + 0,
                                      y: yPosition + 0))  // A
@@ -142,7 +148,7 @@ canvas.drawLine(from: Point(x:140,y:160), to: Point(x:147,y:164))
 canvas.lineColor = .blue
 
         //drawing anvil body
-canvas.drawLine(from: Point(x:157,y:160), to: Point(x:167,y:148))
+canvas.drawLine(from: Point(x:160,y:158), to: Point(x:167,y:148))
 canvas.drawLine(from: Point(x:167,y:148), to: Point(x:165,y:145))
 canvas.drawLine(from: Point(x:120,y:100), to: Point(x:118,y:97))
 canvas.drawLine(from: Point(x:118,y:97), to: Point(x:80,y:135))
@@ -183,7 +189,7 @@ canvas.drawLine(from: Point(x:160,y:300), to: Point(x:165,y:335))
 
 // Show a grid
 
-canvas.drawAxes(withScale: false, by: 50, color: .white)
+canvas.drawAxes(withScale: true, by: 50, color: .white)
 
 canvas.highPerformance = false
 
